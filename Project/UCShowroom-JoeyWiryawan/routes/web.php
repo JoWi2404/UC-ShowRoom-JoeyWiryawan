@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +16,3 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/test', function () {
-    return view('home');
-});
-
-Route::get('/user/{id}', [UserController::class, 'show']);
-
-//route resource
-Route::resource('/posts', \App\Http\Controllers\PostController::class);
