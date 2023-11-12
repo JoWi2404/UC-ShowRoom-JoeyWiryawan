@@ -7,7 +7,10 @@ use Illuminate\View\View;
 
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Vehicle;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -17,7 +20,8 @@ class OrderController extends Controller
     public function index()
     {
         //
-        $order = Order::latest();
+        $form = Order::all();
+        return view('form.orderTable', ['form' => $form]);
     }
 
     /**
@@ -26,14 +30,23 @@ class OrderController extends Controller
     public function create()
     {
         //
+        $vehicle = Vehicle::all();
+        $customer = Customer::all();
+        return view('form.createOrder', ['customers' => $customer], ['vehicles' => $vehicle]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreOrderRequest $request)
+    public function store(Request $request)
     {
         //
+        $order_data = Order::create([
+            'order_id' => $request -> order_id,
+            'vehicle_id' => $request -> vehicle_id
+        ]);
+
+        return redirect(route('order.index'));
     }
 
     /**
@@ -55,7 +68,7 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOrderRequest $request, Order $order)
+    public function update(Request $request, Order $order)
     {
         //
     }

@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use App\Http\Requests\StoreVehicleRequest;
 use App\Http\Requests\UpdateVehicleRequest;
 use App\Models\Vehicle;
+use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
@@ -16,7 +17,8 @@ class VehicleController extends Controller
     public function index()
     {
         // get Vehicles 
-        $vehicles = Vehicle::latest();
+        $vehicles = Vehicle::all();
+        return view('form.vehicleTable', ['form' => $vehicles]);
     }
 
     /**
@@ -25,14 +27,32 @@ class VehicleController extends Controller
     public function create()
     {
         //
+        return view('form.createVehicle');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreVehicleRequest $request)
+    public function store(Request $request)
     {
         //
+        $vehicle_data = Vehicle::create([
+            'TypesofVehicle' => $request->TypesofVehicle,
+            'Model'=> $request->Model,
+            'Year'=> $request->Year,
+            'PassengerTotal'=> $request->PassengerTotal,
+            'Manufacturer'=> $request->Manufacturer,
+            'Price'=> $request->Price,
+            'OilType'=> $request->OilType,
+            'LuggageSpace'=> $request->LuggageSpace,
+            'TireCount'=> $request->TireCount,
+            'PassengerSeat'=> $request->PassengerSeat,
+            'CargoAreaSize'=> $request->CargoAreaSize,
+            'LuggageSize'=> $request->LuggageSize,
+            'FuelCapacity'=> $request->FuelCapacity,
+        ]);
+
+        return redirect(route('form.vehicleTable'));
     }
 
     /**
@@ -54,7 +74,7 @@ class VehicleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateVehicleRequest $request, Vehicle $vehicle)
+    public function update(Request $request, Vehicle $vehicle)
     {
         //
     }
@@ -65,5 +85,9 @@ class VehicleController extends Controller
     public function destroy(Vehicle $vehicle)
     {
         //
+        $vehicle ->delete();
+
+        return redirect(route('form.vehicleTable'))
+        ->with('success', 'Vehicle deleted Successfully');
     }
 }

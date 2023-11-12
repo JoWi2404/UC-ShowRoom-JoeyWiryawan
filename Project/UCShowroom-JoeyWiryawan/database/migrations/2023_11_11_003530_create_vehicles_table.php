@@ -16,16 +16,16 @@ return new class extends Migration
             $table->char('TypesofVehicle');
             $table->string('Model');
             $table->integer('Year');
-            $table->integer('PassengerSize');
-            $table->string('Manufacture');
+            $table->integer('PassengerTotal');
+            $table->string('Manufacturer');
             $table->string('Price');
             $table->string('OilType')->nullable();
             $table->string('LuggageSpace')->nullable();
             $table->integer('TireCount')->nullable();
+            $table->integer('PassengerSeat')->nullable();
             $table->string('CargoAreaSize')->nullable();
             $table->string('LuggageSize')->nullable();
             $table->string('FuelCapacity')->nullable();
-            $table->string('VehicleImage');
             $table->timestamps();
         });
     }
