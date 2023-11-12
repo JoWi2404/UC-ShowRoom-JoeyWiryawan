@@ -9,9 +9,9 @@ class Vehicle extends Model
 {
     use HasFactory;
 
-    protected $fillable = 
+    protected $fillable =
     [
-        'TypesofVehicle', 
+        'TypesofVehicle',
         'Model',
         'Year',
         'PassengerTotal',
@@ -26,7 +26,7 @@ class Vehicle extends Model
         'FuelCapacity',
         'VehicleImage'
     ];
-    
+
     //Define Relation where Vehicle have many Order
     public function orders()
     {

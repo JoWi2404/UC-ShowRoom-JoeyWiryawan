@@ -8,32 +8,34 @@
     <title>CRUD</title>
 </head>
 {{-- FORM for EDIT --}}
+
 <body>
     <h1>Edit Customer Data</h1>
-    <form method="post" action="{{route('customer.update', ['customer' => $customer->id])}}">
+    <form method="post" action="{{ route('customer.update', ['customer' => $customer->id]) }}">
         @csrf
         @method('patch')
         <div>
             <label>Name</label>
-            <input type="name" name="Name" placeholder="Enter Your Name" value="{{$customer->Name}}">
-           
+            <input type="name" name="Name" placeholder="Enter Your Name" value="{{ $customer->Name }}">
+
         </div>
         <div>
             <label>Address</label>
-            <input type="text" name="Address" placeholder="Enter Your Address" value="{{$customer->Address}}">
-        
+            <input type="text" name="Address" placeholder="Enter Your Address" value="{{ $customer->Address }}">
+
         </div>
         <div>
             <label>Phone Number</label>
-            <input type="string" name="PhoneNumber" placeholder="Enter Your Phone Number" value="{{$customer->PhoneNumber}}">
+            <input type="string" name="PhoneNumber" placeholder="Enter Your Phone Number"
+                value="{{ $customer->PhoneNumber }}">
 
         </div>
         <div>
             <label>IDCard</label>
-            <input type="string" name="IDCard" placeholder="Enter Your IDCard" value="{{$customer->IDCard}}">
+            <input type="string" name="IDCard" placeholder="Enter Your IDCard" value="{{ $customer->IDCard }}">
         </div>
         <div>
-        <input type="submit" value="Edit Customer">
+            <input type="submit" value="Edit Customer">
         </div>
     </form>
 </body>

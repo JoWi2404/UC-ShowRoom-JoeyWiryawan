@@ -45,12 +45,12 @@
                 </tr>
                 @foreach ($form as $order)
                     <tr>
-                        <td>{{$order->customers->Name}}</td>
-                        <td>{{$order->vehicles->TypesofVehicle}}</td>
-                        <td>{{$order->customer->Address}}</td>
+                        <td>{{ $order->customers->Name }}</td>
+                        <td>{{ $order->vehicles->TypesofVehicle }}</td>
+                        <td>{{ $order->customer->Address }}</td>
                     </tr>
                 @endforeach
-                
+
             </table>
             <a href="order/create">
                 <button type="button" class="btn btn-primary btn-lg">Add New Data</button></a>

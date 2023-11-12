@@ -26,10 +26,12 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="{{route('order.index')}}">Order</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <a class="navbar-brand" href="{{ route('order.index') }}">Order</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
     <div class="d-flex justify-content-center">
@@ -71,11 +73,12 @@
                             <td>{{ $vehicle->LuggageSize }}</td>
                             <td>{{ $vehicle->FuelCapacity }}</td>
                             <td>
-                                <form action="{{ route('vehicle.destroy', ['vehicle' => $vehicle]) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
+                                <form action="{{ route('vehicle.destroy', ['vehicle' => $vehicle]) }}" method="POST"
+                                    style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Delete</button>
+                                </form>
                             </td>
                             {{-- <td> 
                             <a href="{{route('form.edit', ['Customer' => $vehicle])}}">Edit</a>

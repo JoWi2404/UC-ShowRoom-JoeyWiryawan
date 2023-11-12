@@ -44,27 +44,27 @@
                         <th>Vehicle</th>
                         <th>Roda</th>
                     </tr>
-                        <td>
-                            <select id="customer_order" name="customer_order">
-                                @foreach ($customers as $customer)
-                                    <option value="{{ $customer->id }}">{{ $customer->Name }}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                        <td>
-                            <select id="vehicle_order" name="vehicle_order">
-                                @foreach ($vehicles as $vehicle)
-                                    <option value="{{ $vehicle->id }}">{{ $vehicle->TypesofVehicle }}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                        <td>
-                            <select id="vehicle_order" name="vehicle_order">
-                                @foreach ($vehicles as $vehicle)
-                                    <option value="{{ $vehicle->id }}">{{ $vehicle->TireCount }}</option>
-                                @endforeach
-                            </select>
-                        </td>
+                    <td>
+                        <select id="customer_order" name="customer_order">
+                            @foreach ($customers as $customer)
+                                <option value="{{ $customer->id }}">{{ $customer->Name }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <select id="vehicle_order" name="vehicle_order">
+                            @foreach ($vehicles as $vehicle)
+                                <option value="{{ $vehicle->id }}">{{ $vehicle->TypesofVehicle }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <select id="vehicle_order" name="vehicle_order">
+                            @foreach ($vehicles as $vehicle)
+                                <option value="{{ $vehicle->id }}">{{ $vehicle->TireCount }}</option>
+                            @endforeach
+                        </select>
+                    </td>
                 </table>
             </form>
         </div>

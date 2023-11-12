@@ -10,7 +10,7 @@
 
 <body>
     <h1>Create Vehicle Data</h1>
-    <form method="POST" action="{{route('vehicle.store')}}">
+    <form method="POST" action="{{ route('vehicle.store') }}">
         @csrf
         {{-- Dropdown for Choosing Vehicle --}}
         <div>
@@ -25,12 +25,12 @@
         <div>
             <label>Model</label>
             <input type="string" name="Model" placeholder="Enter Model">
-        
+
         </div>
         <div>
             <label>Year</label>
             <input type="string" name="Year" placeholder="Enter Year">
-        
+
         </div>
         <div>
             <label>Passenger Total</label>
@@ -81,13 +81,13 @@
             <input type="number" name="FuelCapacity" placeholder="Enter Fuel Capacity">
         </div>
         <div>
-        <input type="submit" value="Save Vehicle Data">    
+            <input type="submit" value="Save Vehicle Data">
         </div>
     </form>
 
 
-    
-    
+
+
 </body>
 
 </html>

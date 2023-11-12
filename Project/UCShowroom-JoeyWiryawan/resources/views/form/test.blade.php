@@ -26,10 +26,12 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="{{route('order.index')}}">Order</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <a class="navbar-brand" href="{{ route('order.index') }}">Order</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
     <h1>Customer Table</h1>
@@ -52,7 +54,8 @@
                         <td>{{ $customer->IDCard }}</td>
                         <td>
                             <a href="{{ route('form.edit', ['customer' => $customer]) }}">Edit</a>
-                            <form action="{{ route('form.delete', ['customer' => $customer]) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('form.delete', ['customer' => $customer]) }}" method="POST"
+                                style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Delete</button>
